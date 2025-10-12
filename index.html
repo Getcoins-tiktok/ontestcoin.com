@@ -498,3 +498,163 @@
 </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Coin Purchase</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    :root {
+      --primary: #ff0050;
+      --bg: #fafafa;
+      --card-bg: #fff;
+      --text: #111;
+      --subtext: #555;
+      --tiktok-blue: #00f2ea;
+      --tiktok-red: #ff0050;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      max-width: 960px;
+      width: 100%;
+    }
+    h2 { text-align:center; margin:0; color:var(--text); }
+    .note { text-align:center; margin:10px 0 20px; color:var(--primary); font-size:14px; }
+    .user-box {
+      display:flex; align-items:center; border:1px solid #ddd;
+      border-radius:12px; padding:10px 14px; margin-bottom:10px; background:#fff;
+      position: relative;
+    }
+    .user-box img { width:28px; height:28px; margin-right:10px; }
+    .user-box input { flex:1; border:none; outline:none; font-size:16px; }
+
+    /* --- Biểu tượng trạng thái --- */
+    .status-icon {
+      position: absolute;
+      right: 12px;
+      display: none;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* TikTok loading */
+    .tiktok-loader {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+    }
+    .tiktok-loader::before,
+    .tiktok-loader::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      box-sizing: border-box;
+      animation: tiktok-spin 1s linear infinite;
+    }
+    .tiktok-loader::before {
+      border-top-color: var(--tiktok-red);
+    }
+    .tiktok-loader::after {
+      border-bottom-color: var(--tiktok-blue);
+      animation-delay: -0.5s;
+    }
+    @keyframes tiktok-spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Success & Error */
+    .status-success {
+      color: #007bff;
+      font-size: 18px;
+      display: inline-block;
+    }
+    .status-error {
+      color: #ff0033;
+      font-size: 18px;
+      display: inline-block;
+    }
+
+    /* Các phần style còn lại giữ nguyên */
+    #tiktokProfile {
+      display:none;
+      align-items:center;
+      gap:12px;
+      margin:-5px 0 20px 0;
+      padding:8px 12px;
+      background:#f9f9f9;
+      border-radius:12px;
+      border:1px solid #ddd;
+    }
+    #tiktokProfile img {
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      border:1px solid #ccc;
+      object-fit:cover;
+    }
+    #tiktokDisplayName { font-weight:bold; font-size:15px; }
+    #tiktokUsername { color:#888; font-size:13px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>TikTok Coin Purchase</h2>
+  <div class="note">Save about 25% on service fees from third-party providers.</div>
+
+  <div class="user-box">
+    <img src="https://i.imgur.com/ViazpQP.png" alt="user">
+    <input type="text" id="username" placeholder="Enter your TikTok username">
+    <div id="statusIcon" class="status-icon"></div>
+  </div>
+
+  <script>
+    const inputUsername = document.getElementById("username");
+    const statusIcon = document.getElementById("statusIcon");
+    let debounceTimer = null;
+
+    function hasVietnameseAccent(str) {
+      return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(str);
+    }
+
+    inputUsername.addEventListener("input", () => {
+      clearTimeout(debounceTimer);
+      statusIcon.innerHTML = `<div class="tiktok-loader"></div>`;
+      statusIcon.style.display = "inline-block";
+
+      debounceTimer = setTimeout(() => {
+        const val = inputUsername.value.trim();
+
+        // Giữ hiệu ứng loading 3 giây
+        setTimeout(() => {
+          if (val.length < 4 || hasVietnameseAccent(val)) {
+            statusIcon.innerHTML = `<span class="status-error">❌</span>`;
+          } else {
+            statusIcon.innerHTML = `<span class="status-success">✔️</span>`;
+          }
+        }, 3000);
+      }, 500);
+    });
+  </script>
+</div>
+</body>
+</html>
+
