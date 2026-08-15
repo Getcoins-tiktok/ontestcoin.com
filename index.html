@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Get Coins</title>
+    <title>Get Coins - Prototype</title>
 
     <link
         rel="stylesheet"
@@ -29,9 +29,7 @@
     <section class="card">
 
 
-        <h1>
-            TikTok Coin Purchase
-        </h1>
+        <h1>Get Coins</h1>
 
 
         <p class="subtitle">
@@ -57,7 +55,7 @@
             <input
                 type="text"
                 id="username"
-                placeholder="Enter your TikTok username"
+                placeholder="Enter your username"
                 autocomplete="off"
                 maxlength="30"
             >
@@ -66,7 +64,8 @@
             <span
                 id="username-status"
                 class="username-status"
-            ></span>
+            >
+            </span>
 
 
         </div>
@@ -83,8 +82,6 @@
         >
 
 
-            <!-- 30 -->
-
             <button
                 type="button"
                 class="coin-card"
@@ -98,19 +95,13 @@
                     class="coin-logo"
                 >
 
-                <strong>
-                    30
-                </strong>
+                <strong>30</strong>
 
-                <span>
-                    $0.38
-                </span>
+                <span>$0.38</span>
 
             </button>
 
 
-
-            <!-- 350 -->
 
             <button
                 type="button"
@@ -125,19 +116,13 @@
                     class="coin-logo"
                 >
 
-                <strong>
-                    350
-                </strong>
+                <strong>350</strong>
 
-                <span>
-                    $4.36
-                </span>
+                <span>$4.36</span>
 
             </button>
 
 
-
-            <!-- 700 -->
 
             <button
                 type="button"
@@ -152,19 +137,13 @@
                     class="coin-logo"
                 >
 
-                <strong>
-                    700
-                </strong>
+                <strong>700</strong>
 
-                <span>
-                    $8.73
-                </span>
+                <span>$8.73</span>
 
             </button>
 
 
-
-            <!-- 1,400 -->
 
             <button
                 type="button"
@@ -179,19 +158,13 @@
                     class="coin-logo"
                 >
 
-                <strong>
-                    1,400
-                </strong>
+                <strong>1,400</strong>
 
-                <span>
-                    $17.45
-                </span>
+                <span>$17.45</span>
 
             </button>
 
 
-
-            <!-- 3,500 -->
 
             <button
                 type="button"
@@ -206,19 +179,13 @@
                     class="coin-logo"
                 >
 
-                <strong>
-                    3,500
-                </strong>
+                <strong>3,500</strong>
 
-                <span>
-                    $43.63
-                </span>
+                <span>$43.63</span>
 
             </button>
 
 
-
-            <!-- 7,000 -->
 
             <button
                 type="button"
@@ -233,19 +200,13 @@
                     class="coin-logo"
                 >
 
-                <strong>
-                    7,000
-                </strong>
+                <strong>7,000</strong>
 
-                <span>
-                    $87.27
-                </span>
+                <span>$87.27</span>
 
             </button>
 
 
-
-            <!-- 17,500 -->
 
             <button
                 type="button"
@@ -260,13 +221,9 @@
                     class="coin-logo"
                 >
 
-                <strong>
-                    17,500
-                </strong>
+                <strong>17,500</strong>
 
-                <span>
-                    $218.17
-                </span>
+                <span>$218.17</span>
 
             </button>
 
@@ -286,9 +243,7 @@
                     class="coin-logo"
                 >
 
-                <strong>
-                    Custom
-                </strong>
+                <strong>Custom</strong>
 
                 <span>
                     Support large quantities
@@ -331,6 +286,7 @@
                 $0.00
             </div>
 
+
         </div>
 
 
@@ -347,16 +303,12 @@
         <div class="payment-grid">
 
 
-
-            <!-- =========================
-                 VISA
-            ========================== -->
+            <!-- VISA -->
 
             <button
                 type="button"
                 class="payment-card"
                 data-payment="Visa"
-                aria-label="Visa"
             >
 
                 <img
@@ -368,15 +320,12 @@
 
 
 
-            <!-- =========================
-                 MASTERCARD
-            ========================== -->
+            <!-- MASTERCARD -->
 
             <button
                 type="button"
                 class="payment-card"
                 data-payment="MasterCard"
-                aria-label="MasterCard"
             >
 
                 <img
@@ -388,15 +337,12 @@
 
 
 
-            <!-- =========================
-                 PAYPAL
-            ========================== -->
+            <!-- PAYPAL -->
 
             <button
                 type="button"
                 class="payment-card"
                 data-payment="PayPal"
-                aria-label="PayPal"
             >
 
                 <img
@@ -408,15 +354,12 @@
 
 
 
-            <!-- =========================
-                 JCB
-            ========================== -->
+            <!-- JCB -->
 
             <button
                 type="button"
                 class="payment-card"
                 data-payment="JCB"
-                aria-label="JCB"
             >
 
                 <img
@@ -456,7 +399,7 @@
                 id="confirm-button"
                 class="confirm-button"
             >
-                Purchase
+                Confirm
             </button>
 
 
@@ -505,11 +448,13 @@
         </div>
 
 
+
         <!-- TITLE -->
 
         <h2 class="success-title">
             🎉 REQUEST SUCCESSFUL!
         </h2>
+
 
 
         <!-- MESSAGE -->
@@ -519,7 +464,7 @@
             You have successfully requested
 
             <strong id="modal-coins">
-                0
+                350
             </strong>
 
             coins for
@@ -531,6 +476,7 @@
         </p>
 
 
+
         <!-- AMOUNT -->
 
         <p class="success-info">
@@ -538,10 +484,11 @@
             💳 Amount:
 
             <strong id="modal-price">
-                $0.00
+                $4.36
             </strong>
 
         </p>
+
 
 
         <!-- PAYMENT -->
@@ -551,10 +498,11 @@
             💳 Payment Method:
 
             <strong id="modal-payment">
-                Visa
+                MasterCard
             </strong>
 
         </p>
+
 
 
         <!-- PROCESSING -->
@@ -565,6 +513,7 @@
             to process your transaction.
 
         </p>
+
 
 
         <!-- OK -->
